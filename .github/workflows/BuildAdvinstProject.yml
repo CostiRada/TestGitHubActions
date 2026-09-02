@@ -3,7 +3,7 @@ on: [workflow_dispatch]
 jobs:
   advinst-aip-build-demo:
     runs-on: windows-latest
-    name: Build Aip Demo
+    name: Test Azure Key Vault
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
