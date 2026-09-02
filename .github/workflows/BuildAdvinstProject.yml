@@ -6,7 +6,7 @@ jobs:
     name: Test Azure Key Vault
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v2
+        uses: actions/upload-artifact@v2
       - name: Build AIP
         uses: caphyon/advinst-github-action@main
         with:
