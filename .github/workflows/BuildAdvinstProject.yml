@@ -6,11 +6,11 @@ jobs:
     name: Test Azure Key Vault
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Build AIP
         uses: caphyon/advinst-github-action@main
         with:
-          advinst-version: '19.0'
+          advinst-version: '22.0'
           advinst-license: ${{ secrets.ADVINST_LICENSE_KEY }}
           advinst-enable-automation: 'true'
           aip-path: ${{ github.workspace }}\Your ApplicationAzure.aip
