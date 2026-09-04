@@ -10,10 +10,6 @@ jobs:
     runs-on: windows-latest
     environment: abcd
     name: Test Azure Key Vault
-    env:
-      AZURE_CLIENT_ID: ${{ vars.AZURE_CLIENT_ID }}
-      AZURE_TENANT_ID: ${{ vars.AZURE_TENANT_ID }}
-      AZURE_LOG_LEVEL: DEBUG
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
