@@ -8,6 +8,10 @@ permissions:
   contents: read    # Required to checkout code
 jobs:
   advinst-aip-build-demo:
+    env:
+      AZURE_CLIENT_ID: ${{ vars.AZURE_CLIENT_ID }}
+      AZURE_TENANT_ID: ${{ vars.AZURE_TENANT_ID }}
+      AZURE_FEDERATED_TOKEN_FILE: ${{ github.workspace }}\oidc-token.txt
     runs-on: windows-latest
     environment: abcd
     name: Test Azure Key Vault  
@@ -23,6 +27,12 @@ jobs:
       - name: Test Background CLI Token Fetch
         run: |
           az account get-access-token --resource "https://vault.azure.net" --tenant ${{ vars.AZURE_TENANT_ID }}
+      - name: Fetch and Save GitHub OIDC Token
+        uses: actions/github-script@v7
+        with:
+         script: |
+            const token = await core.getIDToken('api://AzureADTokenExchange');
+            require('fs').writeFileSync('oidc-token.txt', token);
       - name: Build AIP
         uses: caphyon/advinst-github-action@main
         with:
