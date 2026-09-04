@@ -1,7 +1,7 @@
 name: Build Advanced Installer Project (.AIP)  Demo
 on: [workflow_dispatch]
 env:
-   advancedinstaller_url: 'https://1drv.ms/u/c/0045321a1cbbe07a/IQAPkqewuM6xTZsu-FKyvLhxAfp3etP-dhQBPcXFf5pt5dM?e=XKU0JH&download=1'
+   advancedinstaller_url: 'https://www.advancedinstaller.com/downloads/advinst-costi-test.msi'
 jobs:
   advinst-aip-build-demo:
     runs-on: windows-latest
