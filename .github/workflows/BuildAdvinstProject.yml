@@ -5,6 +5,7 @@ env:
 jobs:
   advinst-aip-build-demo:
     runs-on: windows-latest
+    environment: abcd
     name: Test Azure Key Vault
     steps:
       - name: Check out repository code
